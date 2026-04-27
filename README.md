@@ -1,8 +1,9 @@
 # CivicGuide - Election Process Education Assistant
 
-**Developer:** Vignesh Yadala
-**GitHub:** https://github.com/Vigneshyadala
-**Powered by:** Google Gemini AI + Google Cloud Run
+Developer: Vignesh Yadala
+GitHub: https://github.com/Vigneshyadala
+Email: Vignesh.yadala@gmail.com
+Powered by: Google Gemini AI + Google Cloud Run
 
 ## About
 
@@ -25,7 +26,7 @@ Built by Vignesh Yadala for the Google Antigravity Challenge.
 - backend/requirements.txt - Python dependencies
 - backend/Dockerfile - Cloud Run container
 - frontend/index.html - Single page web app
-- tests/test_app.py - 20+ pytest tests
+- tests/test_app.py - 20 pytest tests
 - deploy.sh - GCP deployment script
 
 ## How To Run Locally
@@ -43,11 +44,11 @@ Built by Vignesh Yadala for the Google Antigravity Challenge.
 4. Run backend
    python app.py
 
-Then open frontend/index.html in your browser.
+5. Open frontend/index.html in your browser
 
 ## Deploy to Google Cloud Run
 
-Run: deploy.sh YOUR_GCP_PROJECT_ID YOUR_GEMINI_API_KEY
+deploy.sh YOUR_GCP_PROJECT_ID YOUR_GEMINI_API_KEY
 
 ## Google Services Used
 
@@ -65,14 +66,14 @@ Run: deploy.sh YOUR_GCP_PROJECT_ID YOUR_GEMINI_API_KEY
 
 ## Testing
 
-Run: pytest
-20+ tests covering chat, sanitization, security, and API endpoints.
+Run pytest
+20 tests covering chat, sanitization, security, and API endpoints.
 
 ## Developer
 
 Vignesh Yadala
-https://github.com/Vigneshyadala
-Email:Vignesh.yadala@gmail.com
+GitHub: https://github.com/Vigneshyadala
+Email: Vignesh.yadala@gmail.com
 
 ## License
 
