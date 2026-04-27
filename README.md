@@ -1,86 +1,81 @@
----
+# CivicGuide - Election Process Education Assistant
 
-## 🚀 How To Run Locally
+**Developer:** Vignesh Yadala
+**GitHub:** https://github.com/Vigneshyadala
+**Powered by:** Google Gemini AI + Google Cloud Run
 
-### Prerequisites
-- Python 3.11+
-- Google Gemini API key from [ai.google.dev](https://ai.google.dev)
+## About
 
-### Steps
+CivicGuide is a smart AI-powered election education assistant built to help citizens understand the democratic process. It provides non-partisan, factual information about voting, registration, ballots, and civic participation.
 
-```bash
-# 1. Clone the repo
-git clone https://github.com/Vigneshyadala/civicguide-election-edu
-cd civicguide-election-edu
+Built by Vignesh Yadala for the Google Antigravity Challenge.
 
-# 2. Install dependencies
-cd backend
-pip install -r requirements.txt
+## Features
 
-# 3. Set Gemini API key
-set GEMINI_API_KEY=your-key-here
+- AI Chat powered by Google Gemini
+- 8 curated election topics
+- Interactive knowledge quiz
+- Voter registration link to vote.gov
+- WCAG 2.1 AA accessible design
+- Secure backend with input sanitization
 
-# 4. Run backend
-python app.py
-```
+## Project Structure
 
-Then open `frontend/index.html` in your browser.
+- backend/app.py - Flask API + Gemini AI
+- backend/requirements.txt - Python dependencies
+- backend/Dockerfile - Cloud Run container
+- frontend/index.html - Single page web app
+- tests/test_app.py - 20+ pytest tests
+- deploy.sh - GCP deployment script
 
----
+## How To Run Locally
 
-## ☁️ Deploy to Google Cloud Run
+1. Clone the repo
+   git clone https://github.com/Vigneshyadala/civicguide-election-edu
 
-```bash
-./deploy.sh YOUR_GCP_PROJECT_ID YOUR_GEMINI_API_KEY
-```
+2. Install dependencies
+   cd backend
+   pip install -r requirements.txt
 
----
+3. Set Gemini API key
+   set GEMINI_API_KEY=your-key-here
 
-## 🌐 Google Services Used
+4. Run backend
+   python app.py
 
-| Service | Usage |
-|---|---|
-| **Google Gemini 1.5 Flash** | Powers the AI chat assistant |
-| **Google Cloud Run** | Serverless deployment |
-| **Google Cloud Build** | Container build and push |
+Then open frontend/index.html in your browser.
 
----
+## Deploy to Google Cloud Run
 
-## 🔐 Security
+Run: deploy.sh YOUR_GCP_PROJECT_ID YOUR_GEMINI_API_KEY
 
-- XSS prevention with `bleach` input sanitization
+## Google Services Used
+
+- Google Gemini 1.5 Flash - Powers the AI chat
+- Google Cloud Run - Serverless deployment
+- Google Cloud Build - Container build and push
+
+## Security
+
+- XSS prevention with bleach sanitization
 - HTML escaping on all user content
 - Non-root Docker container
 - Gemini safety filters enabled
 - CORS configurable via environment variable
 
----
+## Testing
 
-## 🧪 Testing
-
-```bash
-pip install pytest
-pytest
-```
-
+Run: pytest
 20+ tests covering chat, sanitization, security, and API endpoints.
 
----
+## Developer
 
-## 👨‍💻 Developer
-
-**Vignesh Yadala**  
-🔗 [github.com/Vigneshyadala](https://github.com/Vigneshyadala)
-👨‍💻 Author
 Vignesh Yadala
-Email:vignesh.yadala@gmail.com
+https://github.com/Vigneshyadala
+Email:Vignesh.yadala@gmail.com
 
----
+## License
 
-## 📄 License
+MIT License 2025 Vignesh Yadala
 
-MIT License © 2025 Vignesh Yadala
-
----
-
-*Built with ❤️ for civic education. Democracy works better when citizens understand it.*  
+Built with love for civic education. Democracy works better when citizens understand it.
