@@ -6,7 +6,7 @@ Powered by Google Gemini AI
 
 import os
 import logging
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 import google.generativeai as genai
 from google.generativeai.types import HarmCategory, HarmBlockThreshold
@@ -15,7 +15,7 @@ import bleach
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="frontend", static_url_path="")
 CORS(app, origins=os.environ.get("ALLOWED_ORIGINS", "*"))
 
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
@@ -114,6 +114,10 @@ def topics():
         ]
     })
 
+@app.route("/", methods=["GET"])
+def index():
+    return send_from_directory("frontend", "index.html")
+
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8080))
-    app.run(host="0.0.0.0", port=port, debug=False) 
+    app.run(host="0.0.0.0", port=port, debug=False)

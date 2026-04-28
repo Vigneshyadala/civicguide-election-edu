@@ -2,7 +2,6 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-# Security: non-root user
 RUN addgroup --system appgroup && adduser --system --group appuser
 
 COPY requirements.txt .
@@ -16,4 +15,4 @@ USER appuser
 ENV PORT=8080
 EXPOSE 8080
 
-CMD ["gunicorn", "--bind", "0.0.0.0:8080", "--workers", "2", "--timeout", "60", "app:app"] 
+CMD ["gunicorn", "--bind", "0.0.0.0:8080", "--workers", "2", "--timeout", "60", "app:app"]
